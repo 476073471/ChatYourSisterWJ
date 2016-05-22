@@ -294,7 +294,7 @@ var Helper = {
         });
         //王婕
         $(".goWJ").click(function () {
-            window.open(window.location.href+"/WJ.HTML");
+            window.open("https://chatyoursisterwj.herokuapp.com/WJ.html");
         });
     },
     //判断昵称是否正确
