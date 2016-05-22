@@ -1,0 +1,361 @@
+﻿body {
+	margin:0;
+}
+/*****************Panel*****************/
+.content
+{
+	margin-left:10px;
+	margin-top:10px;
+	width:700px;
+	height:600px;
+	border-radius:10px;
+	box-shadow:#808080 0 0 10px;
+	background-image:url("../Images/content_background.png")
+}
+.Panel_top
+{
+	width:100%;
+	height:49px;
+	border-radius:10px 10px 0 0;
+	border-bottom:solid 1px #c7c7c7;
+}
+.Panel_left
+{
+	width:550px;
+	height:550px;
+	border-radius:0 0 0 10px;
+	border-right:solid 1px #c7c7c7;
+}
+.Panel_right
+{
+	width:149px;
+	height:550px;
+	border-radius:0 0 10px 0;
+}
+/*****************Panel_top*****************/
+.userName
+{
+	font-family:微软雅黑;
+	font-size:20px;
+	top:10px;
+	margin-left:10px;
+}
+/*****************Panel_left*****************/
+.ChatMessage
+{
+	height:400px;
+	border-bottom:solid 1px #c7c7c7;
+	overflow:auto;
+	font-family:微软雅黑;
+	font-size:small;
+	visibility:hidden;
+	word-wrap:break-word;
+}
+.MsgContent
+{
+	font-size:small;
+	font-family:微软雅黑;
+	position:absolute;
+	bottom:150px;
+	width:100%;
+	height:20px;
+	background-color:white;
+	opacity:0.5;
+	display:none;
+}
+.MsgContent span
+{ 
+	margin-left:10px;
+}
+.emojiArea
+{
+	position:absolute;
+	bottom:180px;
+	left:20px;
+	width:510px;
+	height:210px;
+	background-color:#bdfbfb;
+	border-radius:10px;
+	box-shadow:#808080 2px 2px 10px;
+	overflow:auto;
+	display:none;
+}
+.emojiArea img
+{
+	width:40px;
+	height:40px;
+	max-height:40px;
+	max-width:40px;
+	margin:10px 0 0 10px;
+	box-shadow:#ffb505 0 0 3px;
+}
+.img_emoji
+{
+	padding:0px;
+}
+.msg
+{
+	margin:2px 2px 0 10px;
+    padding:0px;
+}
+.msg_info
+{
+	color:#0446ff;
+}
+.img_text
+{
+	max-width: 90%;
+	margin:2px 2px 0 30px;
+    padding:0px;
+}
+.msg_text
+{
+	margin:2px 2px 0 30px;
+    padding:0px;
+}
+.loginRoom
+{
+	color:#0bdc1c;
+}
+.leaveRoom
+{
+	color:#fe2121;
+}
+.MenuBar
+{
+	height:29px;
+	font-family:微软雅黑;
+}
+#selectImg
+{
+	display:none;
+}
+#selectFile
+{
+	display:none;
+}
+.buttonArea
+{
+	position:absolute;
+	left:10px;
+}
+.selectArea
+{
+	position:absolute;
+	right:10px;
+}
+.selectColor
+{
+	border:none;
+	background-color:transparent;
+	outline-style:none;
+	margin-left:10px;
+	width:40px;
+}
+.sendArea
+{
+	height:120px;
+	border-radius:0 0 0 10px;
+}
+.txtSendMessage
+{
+	padding:5px;
+	font-family:微软雅黑;
+	height:100px;
+	width:540px;
+	resize:none;
+	border:none;
+	outline-style:none;
+	background-color:transparent;
+}
+/*****************Panel_right*****************/
+.online-word
+{	
+	font-family:微软雅黑;
+	font-size:15px;
+	height:25px;
+	border-bottom:solid 1px #c7c7c7;
+	padding:5px 0 0 5px;
+}
+.onlineUser
+{
+	overflow:auto;
+	height:500px;
+}
+.onlineUser .user_other
+{
+	background-color:#bdfbfb;
+}
+.onlineUser .user_own
+{
+	background-color:#a4fb00;
+}
+.userList
+{
+	margin:1px 1px 0 10px;
+    padding:0px;
+	font-family:微软雅黑;
+	font-size:14px;
+}
+/*****************cover*****************/
+.connect-cover
+{
+	font-family:微软雅黑;
+	text-align:center;
+	color:white;
+	margin-top:-50px;
+	display:block;
+}
+.connect-window 
+{
+	width:100%;
+	height:100%;
+	background-color:black;
+	opacity:0.7;
+	border-radius:10px;
+}
+.connect-word 
+{
+	position:absolute;
+	width:200px;
+	height:200px;
+	left:50%;
+	top:50%;
+	margin-top:-30px;
+	margin-left:-100px;
+}
+.reader-cover
+{
+	font-family:微软雅黑;
+	text-align:center;
+	color:white;
+	margin-top:-50px;
+}
+.reader-window
+{
+	width:100%;
+	height:100%;
+	background-color:black;
+	opacity:0.7;
+	border-radius:10px;
+}
+.reader-word
+{
+	position:absolute;
+	width:200px;
+	height:200px;
+	left:50%;
+	top:50%;
+	margin-top:-30px;
+	margin-left:-100px;
+}
+/*输入昵称界面*/
+.nickName-window
+{
+	position:absolute;
+	width:260px;
+	height:100px;
+	left:50%;
+	top:50%;
+	margin-top:-50px;
+	margin-left:-130px;
+	background-color:#f2d5d5;
+	border: #35a5e5 1px solid;
+	box-shadow: 0 0 5px rgba(81, 203, 238, 1);
+	font-family:微软雅黑;
+	color:black;
+	display:none;
+}
+.nickName-textArea
+{
+	margin-top:10px;
+	margin-left:10px;
+	margin-right:10px;
+}
+.nickName-errorWord
+{
+	color:red;
+	margin-left:10px;
+	margin-right:10px;
+	/*display:none;*/
+}
+.nickName-btnArea
+{
+	position:absolute;
+	text-align:center;
+	width:100%;
+	bottom:10px;
+}
+.nickName-btnArea .btn
+{
+	border-color: #fe4d3d;
+    color: #fff;
+    background: #f28585;
+    background-size: 100%;
+    width:260px;
+	height:30px;
+}
+/*****************public*****************/
+.fl
+{
+	float:left;
+}
+.fr
+{
+	float:right;
+}
+.cf
+{
+	clear:both;
+}
+Div
+{
+	position:relative;
+}
+.btn
+{
+    display: inline-block;
+    vertical-align: middle;
+    padding: 7px 20px 6px;
+    font-size: 14px;
+    font-weight: 700;
+    -webkit-font-smoothing: antialiased;
+    line-height: 1.5;
+    letter-spacing: .1em;
+    text-align: center;
+    text-decoration: none;
+    border-width: 0 0 1px;
+    border-style: solid;
+    background-repeat: repeat-x;
+    -webkit-border-radius: 2px;
+    border-radius: 2px;
+    -webkit-user-select: none;
+    cursor: pointer;
+}
+.btn2
+{
+	border:none;
+	box-shadow:#06ebcf 0 0 3px;
+	outline-style:none;
+	background-color:transparent;
+}
+.btn2:active
+{
+	box-shadow:#fa8a00 0 0 3px;
+}
+.cover
+{
+	position:absolute;
+	z-index:100;
+	width:100%;
+	height:100%;
+}
+.bgtrans
+{
+	background-color:transparent;
+}
+.select
+{
+	border:none;
+	box-shadow:#06ebcf 0 0 3px;
+}

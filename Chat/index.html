@@ -1,0 +1,72 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <link href="/CSS/Chat.css" rel="stylesheet" />
+    <script src="/Scripts/jquery-1.7.1.js"></script>
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="/Scripts/Chat.js"></script>
+    <title>聊你妹</title>
+</head>
+<body>
+    <div class="content">
+        <div class="Panel_top">
+            <div class="userName"></div>
+        </div>
+        <div class="Panel_left fl">
+            <div class="ChatMessage"></div>
+            <div class="MsgContent"><span></span></div>
+            <div class="emojiArea">
+            </div>
+            <div class="MenuBar">
+                <div class="buttonArea">
+                    <input class="selectApp btn2" type="button" value="表情"/>
+                    <input class="selectImg btn2" type="button" value="图片"/>
+                    <input class="selectFile btn2" type="button" value="文件"/>
+                    <input id="selectImg" type="file" accept=".jpg,.gif,.png,.jpeg"/>
+                    <input id="selectFile" type="file"/>
+                    <input class="selectNotice btn2" type="button" value="启用通知"/>
+                    <input class="goWJ btn2" type="button" value="王婕"/>
+                </div>
+                <div class="selectArea">
+                    <input class="selectColor" type="color" />
+                    <select class="selectFontSize bgtrans select">
+                        <option value="12px">12</option>
+                        <option value="13px" selected="selected">13</option>
+                        <option value="14px">14</option>
+                        <option value="15px">15</option>
+                        <option value="16px">16</option>
+                        <option value="17px">17</option>
+                    </select>
+                    <select class="sendType bgtrans select">
+                        <option value="0" selected="selected">按Enter发送</option>
+                        <option value="1">按Alt+Enter发送</option>
+                    </select>
+                    <input class="clearMsg btn2" type="button" value="clear"/>
+                </div>
+            </div>
+            <div class="sendArea">
+                <textarea class="txtSendMessage"></textarea>
+                <div class="sendbutton"></div>
+            </div>
+        </div>
+        <div class="Panel_right fl">
+            <div class="online-word"></div>
+            <div class="onlineUser"></div>
+        </div>
+        <div class="connect-cover cover">
+            <div class="connect-window"></div>
+            <div class="connect-word">正在接连服务器…………</div>
+            <div class="nickName-window">
+                <div class="nickName-textArea">
+                    昵称：<input class="input_nickNametext" type="text" />
+                </div>
+                <div class="nickName-errorWord"></div>
+                <div class="nickName-btnArea">
+                    <input type="button" class="input_nickName btn" value="确定" />
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

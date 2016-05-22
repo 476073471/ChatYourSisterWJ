@@ -1,0 +1,188 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <script src="/Scripts/jquery-1.7.1.js"></script>
+    <style type="text/css">
+        body {
+            font-family:'Microsoft YaHei';
+            font-size:16px;
+        }
+        #main {
+            background:#2ef6e4;
+            position: absolute;
+            height:480px;
+            width:640px;
+            top: 50%;
+            left: 50%;
+            margin-left: -320px;
+            margin-top: -240px;
+            border-radius:10px;
+            box-shadow:2px 2px 4px #000 ;
+            z-index:999;
+        }
+        #title-area {
+            color:red;
+            font-size:30px;
+            text-align:center;
+            margin-top:20px;
+        }
+        .btn
+        {
+            display: inline-block;
+            vertical-align: middle;
+            padding: 7px 20px 6px;
+            font-size: 14px;
+            font-weight: 700;
+            -webkit-font-smoothing: antialiased;
+            line-height: 1.5;
+            letter-spacing: .1em;
+            text-align: center;
+            text-decoration: none;
+            border-width: 0 0 1px;
+            border-style: solid;
+            background-repeat: repeat-x;
+            -webkit-border-radius: 2px;
+            border-radius: 2px;
+            -webkit-user-select: none;
+            cursor: pointer;
+        }
+        #btnSure 
+        {
+            border-color: #fe4d3d;
+            color: #fff;
+            background: #ff6a00;
+            background-size: 100%;
+            width:70px;
+	        height:30px;
+        }
+
+        #inputTxt {
+            height:20px;
+        }
+
+        #answer-area {
+            margin-top:20px;
+            text-align:center;
+        }
+
+        #text1{
+            position: absolute;
+            width:350px;
+            margin-left:-175px;
+            margin-top:20px;
+            left:50%;
+            display:none;
+        }
+
+        .sp1 {
+            color:#f60bd4
+        }
+
+        .time {
+            color:red
+        }
+
+        #calc {
+            margin-top:120px;
+            text-align:center;
+            bottom:20px;
+            font-size:200px;
+            display:none;
+        }
+        .DM {
+            position:absolute;
+            font-size:40px;
+        }
+        #iframe {
+            position:absolute;
+            height:480px;
+            width:640px;
+            top: 50%;
+            left: 50%;
+            margin-left: -320px;
+            margin-top: -240px;
+            display:none;
+        }
+
+    </style>
+    <title>哈哈哈哈</title>
+</head>
+<body>
+    <div id="main">
+        <div id="title-area">有惊喜哟!</div>
+        <div id="question-area"></div>
+        <div id="answer-area">
+            <input id="inputTxt" type="text" placeholder="请输入你的名字"/>
+            <input id="btnSure" type="button" class="btn" value="确定" />
+        </div>
+        <div id="button-area">
+            <div id="text1">
+                <span class="sp1">王婕同学:</span><br />
+                摘下星星送给你，拽下月亮送给你，让太阳每天为你升起（是不是不知不觉唱起来啦^_^）<br />
+                祝！522快乐哟！<br />
+                再祝！每天都能收获满满的爱！<br />
+                继续祝！我就不再编下去了！耐心等待<span class="time1 time">30</span>秒吧！
+            </div>
+            <div></div>          
+        </div>
+        <div id="calc" class="time">
+            30
+        </div>
+        <iframe id="iframe" src="http://static.hdslb.com/miniloader.swf?aid=4708314&page=1"></iframe>
+    </div> 
+    <script type="text/javascript">
+        $(function () {
+            $("#btnSure").click(Sure);            
+        });
+        
+        var DMInterval
+        var timeInterval;
+        var time = 30;
+        var count = 0;
+        var colorArr = ["#fbfc07", "red", "#ff6a00", "#2ef6e4", "#1ae906", "#000", "#f60bd4", "#001bff", "#ff00ce", "#fbfc07", "#438d15"];
+        var textArr = ["王小婕522快乐！", "小王婕我们爱你！", "婕宝最棒！", "啊啊啊啊啊啊！！！！", "王婕王婕王婕！！！", "我有一只小毛驴，咿呀咿呀哟", "婕婕婕婕~~~~~~~~婕婕婕婕", "送给最美的小婕！哈哈哈哈！", "不要停啊~根本停不下来", "祝我们的小婕妹妹各种各种各种各种赞","最后一次，王婕加油!"];
+        //点击确定事件
+        function Sure() {
+            if ($("#inputTxt").val() == "王婕") {
+                $("#inputTxt").attr("readonly", "readonly")
+                $("#btnSure").attr("readonly", "readonly")
+                $("#text1").show();
+                $("#calc").show();
+                timeInterval = setInterval("BeginInterval()", 1000);
+            } else {
+                alert("请输入您的真实姓名好吗？");
+            }
+        }
+
+        function BeginInterval() {
+            time = time - 1
+            $("#calc").html(time)
+            $(".time1").html(time)
+            if (time == 0) {
+                clearInterval(timeInterval);
+                DMInterval = setInterval("CreatDM()", 100);
+                $("#iframe").show();
+            }
+        }
+
+        function CreatDM() {
+            var height = Math.ceil(Math.random() * $(window).height());
+            var width = $(window).width();
+            var myColor = colorArr[Math.ceil(Math.random() * 10)];
+            var myText = textArr[Math.ceil(Math.random() * 10)];
+            var DM = $("body").append("<div id='DM" + count + "' class='DM'>" + myText + "</div>")
+            var idName = "DM" + count;
+            count++;
+            $("#" + idName).css("margin-top", height <= ($("#" + idName).width() / 2) ? height : height - $("#" + idName).width() / 2);
+            $("#" + idName).css("left", width - $("#" + idName).width());
+            $("#" + idName).css("color", myColor);
+            $("#" + idName).animate({ left: "0" - $("#" + idName).width()*2 }, 3000, function () {
+                if ($("#" + idName).position().left <= -$("#" + idName).width()*2) {
+                    $("#" + idName).remove();
+                }
+            });
+        }
+</script>
+</body>
+</html>
