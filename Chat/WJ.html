@@ -129,7 +129,7 @@
         <div id="calc" class="time">
             30
         </div>
-        <embed id="iframe" src="http://static.hdslb.com/miniloader.swf?aid=4708314&page=1"></embed>
+        <iframe id="iframe" src="http://static.hdslb.com/miniloader.swf?aid=4708314&page=1"></iframe>
     </div> 
     <script type="text/javascript">
         $(function () {
@@ -145,6 +145,7 @@
         //点击确定事件
         function Sure() {
             if ($("#inputTxt").val() == "王婕") {
+            	DMInterval = setInterval("CreatDM()", 100);
                 $("#inputTxt").attr("readonly", "readonly")
                 $("#btnSure").attr("readonly", "readonly")
                 $("#text1").show();
@@ -161,8 +162,10 @@
             $(".time1").html(time)
             if (time == 0) {
                 clearInterval(timeInterval);
-                DMInterval = setInterval("CreatDM()", 100);
                 $("#iframe").show();
+                if(confirm("对不起，服务器认为B站不安全，只能跳转到新页面看了！"){
+               	    window.open("http://static.hdslb.com/miniloader.swf?aid=4708314&page=1");
+                }
             }
         }
 
